@@ -49,7 +49,7 @@ export default function ProjectCard({ project, index }) {
         transition: 'transform 0.3s ease-out, box-shadow 0.3s ease',
         animationDelay: `${index * 100}ms`,
       }}
-      className="reveal-scale glass rounded-3xl overflow-hidden group hover:glow-purple transition-shadow duration-500"
+      className="glass rounded-3xl overflow-hidden group hover:glow-purple transition-shadow duration-500"
     >
       {/* Project image header */}
       <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
