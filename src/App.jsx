@@ -1,28 +1,43 @@
-import './App.css';
+import { useTheme } from './hooks/useTheme';
+import CustomCursor from './components/CustomCursor';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
+/**
+ * App - Main application component
+ * Composes all portfolio sections with theme management
+ */
 function App() {
+  const { isDark, toggleTheme } = useTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <>
+      {/* Custom cursor glow effect (desktop only) */}
+      <CustomCursor />
+
+      {/* Noise texture overlay for subtle depth */}
+      <div className="noise-overlay" aria-hidden="true" />
+
+      {/* Sticky navigation */}
+      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+
+      {/* Main content */}
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </>
   );
 }
 
