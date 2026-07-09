@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 /**
  * ProjectCard - Individual project card with 3D tilt hover effect,
- * gradient header, tech tags, and action links
+ * project image, tech tags, and clickable action links
  * 
  * @param {Object} project - Project data object
  * @param {number} index - Index for stagger animation
@@ -11,6 +11,7 @@ export default function ProjectCard({ project, index }) {
   const cardRef = useRef(null);
   const [transform, setTransform] = useState('');
   const [isHovered, setIsHovered] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // 3D tilt effect on mouse move
   const handleMouseMove = (e) => {
@@ -50,42 +51,42 @@ export default function ProjectCard({ project, index }) {
       }}
       className="reveal-scale glass rounded-3xl overflow-hidden group hover:glow-purple transition-shadow duration-500"
     >
-      {/* Gradient header with icon */}
+      {/* Project image header */}
       <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-        {/* Animated mesh pattern */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 grid-pattern" />
-        </div>
+        {/* Placeholder shimmer while image loads */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 shimmer" />
+        )}
 
-        {/* Floating circles decoration */}
-        <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/10 blur-xl animate-float" />
-        <div className="absolute -bottom-4 -left-4 w-24 h-24 rounded-full bg-white/10 blur-lg animate-float-slow" />
+        {/* Project image */}
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          onLoad={() => setImageLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+            imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+          } group-hover:scale-110`}
+        />
 
-        {/* Large icon */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span
-            className="text-7xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
-            style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.3))' }}
-          >
-            {project.icon}
-          </span>
-        </div>
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         {/* Category badge */}
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 rounded-full bg-black/30 backdrop-blur-md text-white text-xs font-medium border border-white/20">
+        <div className="absolute top-4 left-4 z-10">
+          <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-medium border border-white/20">
             {project.category}
           </span>
         </div>
 
-        {/* Shine effect on hover */}
-        <div
-          className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            background:
-              'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%)',
-          }}
-        />
+        {/* "View Project" overlay on hover */}
+        <div className={`absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          <span className="px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold border border-white/30 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            View Project
+          </span>
+        </div>
       </div>
 
       {/* Card body */}
