@@ -1,10 +1,10 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const stats = [
-  { value: '4+', label: 'Projects Built', icon: '🚀' },
-  { value: '1+', label: 'Years Coding', icon: '💻' },
-  { value: '∞', label: 'Cups of Coffee', icon: '☕' },
-  { value: '100%', label: 'Dedication', icon: '🔥' },
+  { value: '100/100', label: 'Lighthouse Score', icon: '⚡' },
+  { value: '5+', label: 'Projects Built', icon: '🚀' },
+  { value: 'Diploma', label: 'Web App Dev', icon: '🎓' },
+  { value: '2', label: 'Languages', icon: '🌍' },
 ];
 
 /**
@@ -39,30 +39,30 @@ export default function About() {
                 Hello, I'm Rand! 👋
               </h3>
               <p className="text-slate-400 leading-relaxed mb-4">
-                I'm a junior software developer based in <span className="text-neon-cyan font-medium">Stockholm, Sweden</span>,
-                with a passion for creating clean, user-friendly web applications. My journey in
-                tech started with curiosity and has grown into a genuine love for building things
-                that people use and enjoy.
+                I'm an ambitious <span className="text-neon-cyan font-medium">Full-Stack Developer</span> based in
+                <span className="text-neon-cyan font-medium"> Södertälje, Stockholm</span>, with a strong foundation
+                in modern web architecture. I recently architected and shipped a complex, headless e-commerce
+                platform using Next.js 14, TypeScript, and Cloudflare D1.
               </p>
               <p className="text-slate-400 leading-relaxed mb-4">
-                I specialize in <span className="text-neon-purple font-medium">React</span> and modern
-                frontend development, but I'm always exploring new technologies and expanding my
-                toolkit. I believe great software is about both functionality and experience —
-                code that works beautifully and feels great to use.
+                Transitioning from a background in logistics, I bring disciplined problem-solving skills,
+                adaptability, and a user-focused mindset to building high-performance, scalable web
+                applications. I'm passionate about <span className="text-neon-purple font-medium">strict typing</span>,
+                <span className="text-neon-purple font-medium"> edge computing</span>, and delivering pixel-perfect
+                user experiences.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                When I'm not coding, you'll find me exploring Stockholm's coffee scene,
-                reading up on the latest in tech, or working on personal projects that
-                push my boundaries.
+                I hold a Diploma in Web Application Development from Code Institute, where I focused on
+                full-stack development with Python, Django, and modern frontend technologies.
               </p>
             </div>
 
             {/* Quick info chips */}
             <div className="flex flex-wrap gap-3">
               {[
-                { label: '📍 Stockholm, Sweden', color: 'text-neon-cyan' },
-                { label: '💼 Open to work', color: 'text-neon-purple' },
-                { label: '🎓 Self-taught + Bootcamp', color: 'text-neon-pink' },
+                { label: '📍 Södertälje, Stockholm', color: 'text-neon-cyan' },
+                { label: '💼 Open to opportunities', color: 'text-neon-purple' },
+                { label: '🎓 Code Institute Graduate', color: 'text-neon-pink' },
               ].map((chip) => (
                 <span
                   key={chip.label}
@@ -101,10 +101,10 @@ export default function About() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  'Build responsive, accessible web apps with React',
-                  'Craft beautiful UIs with Tailwind CSS & modern CSS',
-                  'Integrate REST APIs and manage application state',
-                  'Write clean, maintainable, well-documented code',
+                  'Architect SSR apps with Next.js 14 & TypeScript',
+                  'Design scalable database schemas for edge deployment',
+                  'Integrate Stripe, PayPal & third-party APIs',
+                  'Build custom admin dashboards & CMS panels',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-slate-400">
                     <span className="text-neon-purple mt-1 flex-shrink-0">▸</span>

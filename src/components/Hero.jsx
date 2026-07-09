@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
 const roles = [
-  'Junior Software Developer',
-  'React Enthusiast',
-  'Problem Solver',
-  'Lifelong Learner',
+  'Full-Stack Developer',
+  'Next.js 14 Specialist',
+  'TypeScript Enthusiast',
+  'Edge Computing Advocate',
 ];
 
 /**
@@ -127,8 +127,9 @@ export default function Hero() {
           className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
           style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}
         >
-          Based in Stockholm, Sweden 🇸🇪 — I craft clean, functional web experiences
-          with modern technologies. Passionate about building things that make a difference.
+          Based in Södertälje, Stockholm 🇸🇪 — I architect high-performance, scalable web
+          applications with Next.js, TypeScript, and edge computing. Passionate about strict
+          typing and delivering pixel-perfect user experiences.
         </p>
 
         {/* CTA buttons */}

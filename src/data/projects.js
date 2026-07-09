@@ -1,17 +1,17 @@
 // ============================================
-// PROJECTS DATA — Edit these to customize your portfolio
+// PROJECTS DATA — Based on Rand Jelo's CV
 // ============================================
 
 export const projects = [
   {
     id: 1,
     title: 'Georgio Bandera',
-    category: 'Web Design',
+    category: 'Full-Stack',
     description:
-      'A sleek, modern landing page for the Georgio Bandera brand. Features elegant typography, smooth scroll animations, and a fully responsive layout that captures the brand\'s premium aesthetic.',
-    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+      'A premium headless e-commerce platform with dual-language support (English/Swedish), custom admin dashboard, and sub-second page loads. Built with Next.js 14 SSR achieving 100/100 Lighthouse scores. Features multi-threshold shipping calculation, dependent product variant system (Size/Color stock tracking), and Stripe + PayPal payment integration.',
+    tech: ['Next.js 14', 'TypeScript', 'Cloudflare D1', 'Stripe', 'PayPal', 'Tailwind CSS'],
     gradient: 'from-purple-500 via-violet-500 to-indigo-500',
-    icon: '🎨',
+    icon: '🛍️',
     liveUrl: '#',
     githubUrl: '#',
     featured: true,
@@ -55,10 +55,23 @@ export const projects = [
     githubUrl: '#',
     featured: true,
   },
+  {
+    id: 5,
+    title: 'Django Full-Stack App',
+    category: 'Full-Stack',
+    description:
+      'A full-stack web application built with Django and PostgreSQL during my Code Institute bootcamp. Implemented user authentication with Allauth, CRUD functionality, and responsive front-end interfaces integrated with Python backend logic.',
+    tech: ['Python', 'Django', 'PostgreSQL', 'Allauth', 'Bootstrap'],
+    gradient: 'from-green-500 via-emerald-500 to-teal-500',
+    icon: '🐍',
+    liveUrl: '#',
+    githubUrl: '#',
+    featured: false,
+  },
 ];
 
 export const projectCategories = [
   'All',
+  'Full-Stack',
   'Web App',
-  'Web Design',
 ];

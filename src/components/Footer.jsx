@@ -17,7 +17,7 @@ export default function Footer() {
     },
     {
       name: 'Email',
-      href: 'mailto:rand.jelo@example.com',
+      href: 'mailto:Rand.jelo@hotmail.se',
       icon: 'M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z',
     },
   ];
@@ -59,8 +59,9 @@ export default function Footer() {
               Rand Jelo<span className="text-neon-cyan">.</span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Junior Software Developer based in Stockholm, Sweden.
-              Building clean, functional web experiences with modern tech.
+              Full-Stack Developer based in Sodertalje, Stockholm.
+              Architecting high-performance web applications with Next.js, TypeScript,
+              and edge computing.
             </p>
           </div>
 

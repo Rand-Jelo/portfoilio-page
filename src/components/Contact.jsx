@@ -45,7 +45,6 @@ export default function Contact() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error for this field on change
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -62,14 +61,12 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
 
-    // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
@@ -77,19 +74,19 @@ export default function Contact() {
     {
       icon: '📧',
       label: 'Email',
-      value: 'rand.jelo@example.com',
-      href: 'mailto:rand.jelo@example.com',
+      value: 'Rand.jelo@hotmail.se',
+      href: 'mailto:Rand.jelo@hotmail.se',
     },
     {
-      icon: '📍',
+      icon: '�',
+      label: 'Phone',
+      value: '+46 76 288 95 54',
+      href: 'tel:+46762889554',
+    },
+    {
+      icon: '�',
       label: 'Location',
-      value: 'Stockholm, Sweden',
-      href: null,
-    },
-    {
-      icon: '💼',
-      label: 'Availability',
-      value: 'Open to opportunities',
+      value: 'Södertälje, Stockholm',
       href: null,
     },
   ];

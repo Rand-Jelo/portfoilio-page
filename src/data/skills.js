@@ -1,5 +1,5 @@
 // ============================================
-// SKILLS DATA — Edit these to customize your portfolio
+// SKILLS DATA — Based on Rand Jelo's CV
 // ============================================
 
 export const skillCategories = [
@@ -9,43 +9,48 @@ export const skillCategories = [
     icon: '💻',
     skills: [
       { name: 'React', level: 85, color: '#61dafb' },
-      { name: 'JavaScript', level: 80, color: '#f7df1e' },
-      { name: 'HTML5', level: 90, color: '#e34f26' },
-      { name: 'CSS3', level: 88, color: '#1572b6' },
-      { name: 'Tailwind CSS', level: 82, color: '#06b6d4' },
+      { name: 'Next.js 14 (App Router)', level: 80, color: '#000000' },
+      { name: 'TypeScript', level: 78, color: '#3178c6' },
+      { name: 'JavaScript (ES6+)', level: 85, color: '#f7df1e' },
+      { name: 'Tailwind CSS', level: 88, color: '#06b6d4' },
+      { name: 'HTML5 & CSS3', level: 90, color: '#e34f26' },
+      { name: 'Responsive Design', level: 87, color: '#1572b6' },
     ],
   },
   {
     id: 'backend',
-    title: 'Backend',
+    title: 'Backend & Database',
     icon: '⚙️',
     skills: [
+      { name: 'Python', level: 75, color: '#3776ab' },
+      { name: 'Django', level: 72, color: '#092e20' },
       { name: 'Node.js', level: 70, color: '#339933' },
-      { name: 'Express', level: 65, color: '#000000' },
-      { name: 'Python', level: 60, color: '#3776ab' },
-      { name: 'REST APIs', level: 75, color: '#ff6c37' },
+      { name: 'SQL (SQLite, D1)', level: 78, color: '#003b57' },
+      { name: 'PostgreSQL', level: 72, color: '#336791' },
+      { name: 'RESTful APIs', level: 80, color: '#ff6c37' },
+      { name: 'Cloudflare Workers', level: 68, color: '#f38020' },
     ],
   },
   {
     id: 'tools',
-    title: 'Tools & Workflow',
+    title: 'Tools & Platforms',
     icon: '🔧',
     skills: [
-      { name: 'Git', level: 80, color: '#f05032' },
+      { name: 'Git & GitHub', level: 85, color: '#f05032' },
       { name: 'VS Code', level: 95, color: '#007acc' },
-      { name: 'Vite', level: 78, color: '#646cff' },
-      { name: 'Figma', level: 65, color: '#f24e1e' },
+      { name: 'Cloudflare Pages', level: 75, color: '#f38020' },
+      { name: 'Vercel', level: 80, color: '#000000' },
+      { name: 'Stripe & PayPal', level: 72, color: '#635bff' },
+      { name: 'AdminJS', level: 65, color: '#1e293b' },
     ],
   },
   {
-    id: 'learning',
-    title: 'Currently Learning',
-    icon: '🚀',
+    id: 'languages',
+    title: 'Languages',
+    icon: '🌍',
     skills: [
-      { name: 'TypeScript', level: 50, color: '#3178c6' },
-      { name: 'Next.js', level: 40, color: '#000000' },
-      { name: 'Docker', level: 35, color: '#2496ed' },
-      { name: 'GraphQL', level: 30, color: '#e10098' },
+      { name: 'Swedish (Native/Bilingual)', level: 100, color: '#005293' },
+      { name: 'English (Professional)', level: 90, color: '#cf142b' },
     ],
   },
 ];
