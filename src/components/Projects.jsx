@@ -77,7 +77,7 @@ export default function Projects() {
         {/* GitHub CTA */}
         <div className="text-center mt-16">
           <a
-            href="#"
+            href="https://github.com/Rand-Jelo"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex"
