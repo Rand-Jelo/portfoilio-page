@@ -127,9 +127,9 @@ export default function Hero() {
           className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
           style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}
         >
-          Based in Södertälje, Stockholm 🇸🇪 — I architect high-performance, scalable web
-          applications with Next.js, TypeScript, and edge computing. Passionate about strict
-          typing and delivering pixel-perfect user experiences.
+          Based in Stockholm, Sweden — I architect high-performance, scalable web
+          applications with Next.js, TypeScript, and Django. Passionate about clean
+          architecture and delivering pixel-perfect user experiences.
         </p>
 
         {/* CTA buttons */}

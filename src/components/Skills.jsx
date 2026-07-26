@@ -3,6 +3,35 @@ import { skillCategories } from '../data/skills';
 import { useScrollAnimation, useScrollAnimationList } from '../hooks/useScrollAnimation';
 
 /**
+ * renderCategoryIcon - SVG icons matching the Contact section style
+ */
+function renderCategoryIcon(categoryId) {
+  const icons = {
+    frontend: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25M14.25 4.5l-4.5 15" />
+      </svg>
+    ),
+    backend: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.7 7.5m14.4 7.2a4.5 4.5 0 00-.9-2.7L18.3 7.5M5.7 7.5a4.5 4.5 0 013.6-1.7h6.4a4.5 4.5 0 013.6 1.7" />
+      </svg>
+    ),
+    tools: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l-5.877 5.877A2.652 2.652 0 012.25 17.25l5.877-5.877M11.42 15.17l-5.877-5.877m5.877 5.877l5.877 5.877M11.42 15.17l5.877-5.877" />
+      </svg>
+    ),
+    languages: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+  };
+  return icons[categoryId] || null;
+}
+
+/**
  * SkillBar - Animated progress bar that fills when scrolled into view
  */
 function SkillBar({ skill, isVisible }) {
@@ -88,8 +117,8 @@ export default function Skills() {
             >
               {/* Category header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
-                  {category.icon}
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neon-purple/20 to-neon-cyan/20 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform duration-300">
+                  {renderCategoryIcon(category.id)}
                 </div>
                 <h3 className="text-xl font-bold text-slate-200 group-hover:text-white transition-colors">
                   {category.title}
