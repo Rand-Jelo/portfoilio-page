@@ -1,10 +1,10 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const stats = [
-  { value: '100/100', label: 'Lighthouse Score', icon: '⚡' },
-  { value: '5+', label: 'Projects Built', icon: '🚀' },
+  { value: '4+', label: 'Projects Built', icon: '🚀' },
   { value: 'Diploma', label: 'Web App Dev', icon: '🎓' },
   { value: '2', label: 'Languages', icon: '🌍' },
+  { value: 'EN/SV', label: 'Bilingual', icon: '💬' },
 ];
 
 /**
@@ -40,14 +40,15 @@ export default function About() {
               </h3>
               <p className="text-slate-400 leading-relaxed mb-4">
                 I'm an ambitious <span className="text-neon-cyan font-medium">Full-Stack Developer</span> based in
-                <span className="text-neon-cyan font-medium"> Södertälje, Stockholm</span>, with a strong foundation
-                in modern web architecture. I recently architected and shipped a complex, headless e-commerce
-                platform using Next.js 14, TypeScript, and Cloudflare D1.
+                <span className="text-neon-cyan font-medium"> Stockholm, Sweden</span>, with a strong foundation
+                in modern web architecture. I've built and shipped a range of projects — from a headless
+                e-commerce platform with Next.js 14 and Cloudflare D1, to full-stack Django applications with
+                PostgreSQL and Stripe integration.
               </p>
               <p className="text-slate-400 leading-relaxed mb-4">
                 Transitioning from a background in logistics, I bring disciplined problem-solving skills,
                 adaptability, and a user-focused mindset to building high-performance, scalable web
-                applications. I'm passionate about <span className="text-neon-purple font-medium">strict typing</span>,
+                applications. I'm passionate about <span className="text-neon-purple font-medium">clean architecture</span>,
                 <span className="text-neon-purple font-medium"> edge computing</span>, and delivering pixel-perfect
                 user experiences.
               </p>
@@ -60,7 +61,7 @@ export default function About() {
             {/* Quick info chips */}
             <div className="flex flex-wrap gap-3">
               {[
-                { label: '📍 Södertälje, Stockholm', color: 'text-neon-cyan' },
+                { label: '📍 Stockholm, Sweden', color: 'text-neon-cyan' },
                 { label: '💼 Open to opportunities', color: 'text-neon-purple' },
                 { label: '🎓 Code Institute Graduate', color: 'text-neon-pink' },
               ].map((chip) => (
@@ -102,9 +103,9 @@ export default function About() {
               <ul className="space-y-3">
                 {[
                   'Architect SSR apps with Next.js 14 & TypeScript',
-                  'Design scalable database schemas for edge deployment',
+                  'Build full-stack platforms with Django & PostgreSQL',
                   'Integrate Stripe, PayPal & third-party APIs',
-                  'Build custom admin dashboards & CMS panels',
+                  'Design scalable database schemas for edge & cloud deployment',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-slate-400">
                     <span className="text-neon-purple mt-1 flex-shrink-0">▸</span>
