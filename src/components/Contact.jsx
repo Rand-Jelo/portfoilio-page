@@ -86,7 +86,7 @@ export default function Contact() {
     {
       iconType: 'location',
       label: 'Location',
-      value: 'Sodertalje, Stockholm',
+      value: 'Stockholm, Sweden',
       href: null,
     },
   ];

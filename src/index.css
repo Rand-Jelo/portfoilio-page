@@ -2,19 +2,25 @@
 
 /* ============================================
    THEME CONFIGURATION (Tailwind v4 CSS-based)
+   Professional Indigo/Slate Palette
    ============================================ */
 @theme {
-  --color-neon-purple: #a855f7;
-  --color-neon-violet: #8b5cf6;
-  --color-neon-cyan: #22d3ee;
-  --color-neon-pink: #ec4899;
-  --color-neon-blue: #3b82f6;
-  --color-dark-base: #0a0a0f;
-  --color-dark-surface: #13131a;
-  --color-dark-card: #1a1a24;
-  --color-light-base: #f8fafc;
-  --color-light-surface: #ffffff;
-  --color-light-card: #f1f5f9;
+  /* Accent colors — professional indigo/sky */
+  --color-neon-purple: #6366f1;   /* indigo-500 — primary accent */
+  --color-neon-violet: #4f46e5;   /* indigo-600 — darker accent */
+  --color-neon-cyan: #0ea5e9;     /* sky-500 — secondary accent */
+  --color-neon-pink: #6366f1;     /* indigo-500 — unified accent */
+  --color-neon-blue: #3b82f6;     /* blue-500 */
+
+  /* Dark theme surfaces */
+  --color-dark-base: #0f172a;     /* slate-900 */
+  --color-dark-surface: #1e293b;  /* slate-800 */
+  --color-dark-card: #1e293b;     /* slate-800 */
+
+  /* Light theme surfaces */
+  --color-light-base: #f8fafc;    /* slate-50 */
+  --color-light-surface: #ffffff; /* white */
+  --color-light-card: #ffffff;    /* white */
 
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
@@ -115,8 +121,44 @@ body {
 /* Light theme */
 body.light {
   background-color: var(--color-light-base);
-  color: #1e293b;
+  color: #0f172a;
 }
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   Fix text visibility and UI element contrast
+   ============================================ */
+
+/* Text colors — dark variants for readability */
+body.light .text-slate-200 { color: #1e293b; }
+body.light .text-slate-300 { color: #334155; }
+body.light .text-slate-400 { color: #475569; }
+body.light .text-slate-500 { color: #64748b; }
+body.light .text-slate-600 { color: #475569; }
+
+/* Hover text — dark instead of white */
+body.light .hover\:text-white:hover { color: #0f172a; }
+body.light .group:hover .group-hover\:text-white { color: #0f172a; }
+
+/* Backgrounds */
+body.light .bg-slate-700\/50 { background-color: rgba(203, 213, 225, 0.5); }
+body.light .bg-dark-surface\/50 { background-color: rgba(241, 245, 249, 0.8); }
+body.light .bg-dark-base\/80 { background-color: rgba(248, 250, 252, 0.9); }
+
+/* Hover backgrounds */
+body.light .hover\:bg-white\/5:hover { background-color: rgba(15, 23, 42, 0.05); }
+
+/* Borders */
+body.light .border-slate-700\/50 { border-color: rgba(203, 213, 225, 0.6); }
+
+/* Placeholder text */
+body.light .placeholder-slate-500::placeholder { color: #94a3b8; }
+
+/* Error text */
+body.light .text-red-400 { color: #dc2626; }
+
+/* Marquee gradient fade */
+body.light .from-dark-base { --tw-gradient-from: var(--color-light-base) !important; }
 
 /* ============================================
    CUSTOM SCROLLBAR
@@ -146,27 +188,29 @@ body.light ::-webkit-scrollbar-track {
    UTILITY CLASSES — GLASSMORPHISM
    ============================================ */
 .glass {
-  background: rgba(26, 26, 36, 0.6);
+  background: rgba(30, 41, 59, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.15);
 }
 
 body.light .glass {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
 }
 
 .glass-strong {
-  background: rgba(19, 19, 26, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
 body.light .glass-strong {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(168, 85, 247, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.1);
 }
 
 /* ============================================
@@ -192,27 +236,27 @@ body.light .glass-strong {
    UTILITY CLASSES — GLOW EFFECTS
    ============================================ */
 .glow-purple {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 60px rgba(99, 102, 241, 0.1);
 }
 
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3), 0 0 60px rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), 0 0 60px rgba(14, 165, 233, 0.1);
 }
 
 .glow-purple-hover:hover {
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 0 80px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5), 0 0 80px rgba(99, 102, 241, 0.2);
 }
 
 .glow-cyan-hover:hover {
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.5), 0 0 80px rgba(34, 211, 238, 0.2);
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.5), 0 0 80px rgba(14, 165, 233, 0.2);
 }
 
 .text-glow {
-  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3);
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5), 0 0 40px rgba(99, 102, 241, 0.3);
 }
 
 .text-glow-cyan {
-  text-shadow: 0 0 20px rgba(34, 211, 238, 0.5), 0 0 40px rgba(34, 211, 238, 0.3);
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.5), 0 0 40px rgba(14, 165, 233, 0.3);
 }
 
 /* ============================================
@@ -254,7 +298,7 @@ body.light .glass-strong {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -272,8 +316,8 @@ body.light .glass-strong {
 }
 
 .btn-secondary:hover {
-  background: rgba(34, 211, 238, 0.1);
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+  background: rgba(14, 165, 233, 0.1);
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
   transform: translateY(-2px);
 }
 
@@ -348,6 +392,10 @@ body.light .glass-strong {
   z-index: 0;
 }
 
+body.light .orb {
+  opacity: 0.15;
+}
+
 /* ============================================
    CUSTOM CURSOR
    ============================================ */
@@ -356,7 +404,7 @@ body.light .glass-strong {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
@@ -364,14 +412,14 @@ body.light .glass-strong {
 }
 
 body.light .cursor-glow {
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
 }
 
 /* ============================================
    SHIMMER LOADING EFFECT
    ============================================ */
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
   background-size: 1000px 100%;
   animation: shimmer 2s linear infinite;
 }
@@ -394,15 +442,34 @@ body.light .cursor-glow {
    ============================================ */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 body.light .grid-pattern {
   background-image:
-    linear-gradient(rgba(168, 85, 247, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+}
+
+/* ============================================
+   MARQUEE FADE EDGES
+   ============================================ */
+.marquee-fade-left {
+  background: linear-gradient(to right, var(--color-dark-base), transparent);
+}
+
+body.light .marquee-fade-left {
+  background: linear-gradient(to right, var(--color-light-base), transparent);
+}
+
+.marquee-fade-right {
+  background: linear-gradient(to left, var(--color-dark-base), transparent);
+}
+
+body.light .marquee-fade-right {
+  background: linear-gradient(to left, var(--color-light-base), transparent);
 }
 
 /* ============================================
@@ -424,8 +491,13 @@ body.light .grid-pattern {
    SELECTION STYLING
    ============================================ */
 ::selection {
-  background: rgba(168, 85, 247, 0.3);
+  background: rgba(99, 102, 241, 0.3);
   color: white;
+}
+
+body.light ::selection {
+  background: rgba(99, 102, 241, 0.2);
+  color: #0f172a;
 }
 
 /* ============================================

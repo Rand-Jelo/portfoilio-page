@@ -28,7 +28,7 @@ export const skillCategories = [
       { name: 'SQL (SQLite, D1)', level: 78, color: '#003b57' },
       { name: 'PostgreSQL', level: 72, color: '#336791' },
       { name: 'RESTful APIs', level: 80, color: '#ff6c37' },
-      { name: 'Cloudflare Workers', level: 68, color: '#f38020' },
+      { name: 'Cloudflare (D1/R2/Pages)', level: 68, color: '#f38020' },
     ],
   },
   {
@@ -39,7 +39,6 @@ export const skillCategories = [
       { name: 'Git & GitHub', level: 85, color: '#f05032' },
       { name: 'VS Code', level: 95, color: '#007acc' },
       { name: 'Cloudflare Pages', level: 75, color: '#f38020' },
-      { name: 'Vercel', level: 80, color: '#000000' },
       { name: 'Stripe & PayPal', level: 72, color: '#635bff' },
       { name: 'AdminJS', level: 65, color: '#1e293b' },
     ],
