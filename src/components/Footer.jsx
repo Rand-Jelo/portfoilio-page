@@ -59,9 +59,9 @@ export default function Footer() {
               Rand Jelo<span className="text-neon-cyan">.</span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Full-Stack Developer based in Sodertalje, Stockholm.
+              Full-Stack Developer based in Stockholm, Sweden.
               Architecting high-performance web applications with Next.js, TypeScript,
-              and edge computing.
+              and Django.
             </p>
           </div>
 
