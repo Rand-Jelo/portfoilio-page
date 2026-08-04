@@ -454,22 +454,11 @@ body.light .grid-pattern {
 }
 
 /* ============================================
-   MARQUEE FADE EDGES
+   MARQUEE MASK FADE
    ============================================ */
-.marquee-fade-left {
-  background: linear-gradient(to right, var(--color-dark-base), transparent);
-}
-
-body.light .marquee-fade-left {
-  background: linear-gradient(to right, var(--color-light-base), transparent);
-}
-
-.marquee-fade-right {
-  background: linear-gradient(to left, var(--color-dark-base), transparent);
-}
-
-body.light .marquee-fade-right {
-  background: linear-gradient(to left, var(--color-light-base), transparent);
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 
 /* ============================================

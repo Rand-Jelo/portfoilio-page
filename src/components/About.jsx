@@ -88,7 +88,7 @@ export default function About() {
               <p className="text-slate-400 leading-relaxed mb-4">
                 I'm an ambitious <span className="text-neon-cyan font-medium">Full-Stack Developer</span> based in
                 <span className="text-neon-cyan font-medium"> Stockholm, Sweden</span>, with a strong foundation
-                in modern web architecture. I've built and shipped a range of projects — from a headless
+                in modern web architecture. I've built and shipped a range of projects, from a headless
                 e-commerce platform with Next.js 14 and Cloudflare D1, to full-stack Django applications with
                 PostgreSQL and Stripe integration.
               </p>

@@ -136,9 +136,7 @@ export default function Skills() {
         </div>
 
         {/* Tech marquee */}
-        <div className="mt-16 overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-20 marquee-fade-left z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 marquee-fade-right z-10 pointer-events-none" />
+        <div className="mt-16 overflow-hidden relative marquee-mask">
           <div className="flex gap-8 animate-marquee whitespace-nowrap">
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex gap-8 items-center">
