@@ -1,74 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 /**
- * Contact - Contact form with client-side validation and success state
+ * Contact - Contact form integrated with Formspree
  */
 export default function Contact() {
   const headerRef = useScrollAnimation();
   const formRef = useScrollAnimation({ threshold: 0.1 });
+  const formElementRef = useRef(null);
+  const [state, handleSubmit] = useForm('mzeppwzj');
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const validate = () => {
-    const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+  useEffect(() => {
+    if (state.succeeded && formElementRef.current) {
+      formElementRef.current.reset();
     }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
-    }
-
-    return newErrors;
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
+  }, [state.succeeded]);
 
   const contactInfo = [
     {
@@ -204,20 +151,24 @@ export default function Contact() {
           {/* Contact form - right side */}
           <div className="reveal-right md:col-span-3" ref={useScrollAnimation({ threshold: 0.1 })}>
             <form
+              ref={formElementRef}
               onSubmit={handleSubmit}
               className="glass rounded-3xl p-8 space-y-6 glow-purple-hover transition-all duration-500"
               noValidate
             >
               {/* Success message */}
-              {isSubmitted && (
-                <div className="rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 p-4 flex items-center gap-3 animate-scale-in">
-                  <span className="text-2xl">✅</span>
-                  <div>
-                    <p className="text-neon-cyan font-semibold">Message sent!</p>
-                    <p className="text-sm text-slate-400">Thanks for reaching out. I'll get back to you soon.</p>
-                  </div>
+              {state.succeeded && (
+                <div className="rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 p-4 space-y-1 animate-scale-in">
+                  <p className="text-neon-cyan font-semibold">Message sent!</p>
+                  <p className="text-sm text-slate-400">Thanks for reaching out. I'll get back to you soon.</p>
                 </div>
               )}
+
+              {/* Form-level error */}
+              <ValidationError
+                errors={state.errors}
+                className="rounded-2xl bg-red-500/10 border border-red-500/30 p-4 text-sm text-red-400 animate-scale-in"
+              />
 
               {/* Name field */}
               <div>
@@ -228,20 +179,20 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   placeholder="John Doe"
-                  className={`w-full px-4 py-3 rounded-xl bg-dark-surface/50 border transition-all duration-300 outline-none focus:ring-2 ${
-                    errors.name
-                      ? 'border-red-500/50 focus:ring-red-500/30'
-                      : 'border-slate-700 focus:border-neon-purple focus:ring-neon-purple/30'
-                  } text-slate-200 placeholder-slate-500`}
+                  required
+                  minLength={2}
+                  className="w-full px-4 py-3 rounded-xl bg-dark-surface/50 border border-slate-700 transition-all duration-300 outline-none focus:ring-2 focus:border-neon-purple focus:ring-neon-purple/30 text-slate-200 placeholder-slate-500"
                 />
-                {errors.name && (
-                  <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                    <span>⚠</span> {errors.name}
-                  </p>
-                )}
+                <ValidationError
+                  field="name"
+                  errors={state.errors}
+                  render={(errorMessage) => (
+                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                      <span>⚠</span> {errorMessage}
+                    </p>
+                  )}
+                />
               </div>
 
               {/* Email field */}
@@ -253,20 +204,19 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   placeholder="john@example.com"
-                  className={`w-full px-4 py-3 rounded-xl bg-dark-surface/50 border transition-all duration-300 outline-none focus:ring-2 ${
-                    errors.email
-                      ? 'border-red-500/50 focus:ring-red-500/30'
-                      : 'border-slate-700 focus:border-neon-purple focus:ring-neon-purple/30'
-                  } text-slate-200 placeholder-slate-500`}
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-dark-surface/50 border border-slate-700 transition-all duration-300 outline-none focus:ring-2 focus:border-neon-purple focus:ring-neon-purple/30 text-slate-200 placeholder-slate-500"
                 />
-                {errors.email && (
-                  <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                    <span>⚠</span> {errors.email}
-                  </p>
-                )}
+                <ValidationError
+                  field="email"
+                  errors={state.errors}
+                  render={(errorMessage) => (
+                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                      <span>⚠</span> {errorMessage}
+                    </p>
+                  )}
+                />
               </div>
 
               {/* Message field */}
@@ -278,29 +228,29 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
                   placeholder="Tell me about your project or just say hello..."
-                  className={`w-full px-4 py-3 rounded-xl bg-dark-surface/50 border transition-all duration-300 outline-none focus:ring-2 resize-none ${
-                    errors.message
-                      ? 'border-red-500/50 focus:ring-red-500/30'
-                      : 'border-slate-700 focus:border-neon-purple focus:ring-neon-purple/30'
-                  } text-slate-200 placeholder-slate-500`}
+                  required
+                  minLength={10}
+                  className="w-full px-4 py-3 rounded-xl bg-dark-surface/50 border border-slate-700 transition-all duration-300 outline-none focus:ring-2 focus:border-neon-purple focus:ring-neon-purple/30 text-slate-200 placeholder-slate-500 resize-none"
                 />
-                {errors.message && (
-                  <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                    <span>⚠</span> {errors.message}
-                  </p>
-                )}
+                <ValidationError
+                  field="message"
+                  errors={state.errors}
+                  render={(errorMessage) => (
+                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                      <span>⚠</span> {errorMessage}
+                    </p>
+                  )}
+                />
               </div>
 
               {/* Submit button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={state.submitting || state.succeeded}
                 className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? (
+                {state.submitting ? (
                   <>
                     <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
