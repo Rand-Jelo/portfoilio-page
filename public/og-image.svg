@@ -1,0 +1,74 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Subtle grid pattern -->
+  <g stroke="rgba(99,102,241,0.08)" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="270" x2="1200" y2="270" />
+    <line x1="0" y1="360" x2="1200" y2="360" />
+    <line x1="0" y1="450" x2="1200" y2="450" />
+    <line x1="0" y1="540" x2="1200" y2="540" />
+    <line x1="100" y1="0" x2="100" y2="630" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="500" y1="0" x2="500" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="700" y1="0" x2="700" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+    <line x1="1100" y1="0" x2="1100" y2="630" />
+  </g>
+
+  <!-- Decorative orbs -->
+  <circle cx="150" cy="120" r="180" fill="#6366f1" opacity="0.12" />
+  <circle cx="1050" cy="520" r="220" fill="#0ea5e9" opacity="0.10" />
+
+  <!-- Accent line -->
+  <rect x="100" y="300" width="140" height="6" rx="3" fill="url(#accent)" />
+
+  <!-- Name -->
+  <text x="100" y="260" font-family="Arial, sans-serif" font-size="90" font-weight="700" fill="#f8fafc">
+    Rand Jelo
+  </text>
+
+  <!-- Title -->
+  <text x="100" y="360" font-family="Arial, sans-serif" font-size="48" font-weight="500" fill="#94a3b8">
+    Full-Stack Developer
+  </text>
+
+  <!-- Location -->
+  <text x="100" y="420" font-family="Arial, sans-serif" font-size="32" font-weight="400" fill="#64748b">
+    Stockholm, Sweden
+  </text>
+
+  <!-- Tech tags -->
+  <g font-family="monospace" font-size="22" font-weight="500">
+    <rect x="100" y="480" width="110" height="44" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" />
+    <text x="155" y="509" text-anchor="middle" fill="#818cf8">React</text>
+
+    <rect x="225" y="480" width="140" height="44" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" />
+    <text x="295" y="509" text-anchor="middle" fill="#818cf8">Next.js 14</text>
+
+    <rect x="380" y="480" width="160" height="44" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" />
+    <text x="460" y="509" text-anchor="middle" fill="#818cf8">TypeScript</text>
+
+    <rect x="555" y="480" width="130" height="44" rx="8" fill="rgba(14,165,233,0.15)" stroke="#0ea5e9" stroke-width="1" />
+    <text x="620" y="509" text-anchor="middle" fill="#38bdf8">Django</text>
+  </g>
+</svg>
