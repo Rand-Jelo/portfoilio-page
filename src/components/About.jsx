@@ -93,15 +93,14 @@ export default function About() {
                 PostgreSQL and Stripe integration.
               </p>
               <p className="text-slate-400 leading-relaxed mb-4">
-                Transitioning from a background in logistics, I bring disciplined problem-solving skills,
-                adaptability, and a user-focused mindset to building high-performance, scalable web
-                applications. I'm passionate about <span className="text-neon-purple font-medium">clean architecture</span>,
-                <span className="text-neon-purple font-medium"> edge computing</span>, and delivering pixel-perfect
-                user experiences.
+                What sets me apart is my background in logistics: I bring disciplined problem-solving,
+                adaptability, and a user-focused mindset to every project. I don't just write code — I think
+                about the business outcome, the user experience, and how the system will scale.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 I hold a Diploma in Web Application Development from Code Institute, where I focused on
-                full-stack development with Python, Django, and modern frontend technologies.
+                full-stack development with Python, Django, and modern frontend technologies. I'm currently
+                looking for a developer role where I can contribute, grow, and help build products that matter.
               </p>
             </div>
 

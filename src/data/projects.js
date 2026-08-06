@@ -8,7 +8,7 @@ export const projects = [
     title: 'Georgio Bandera',
     category: 'Full-Stack',
     description:
-      'A high-performance, dual-language (English/Swedish) headless e-commerce platform built for scale. Custom Next.js 14 App Router architecture with sub-second page loads, complex Size/Color variant inventory, multi-threshold regional shipping, and a fully custom admin dashboard. Self-hosted on Cloudflare Pages with Stripe + PayPal checkout.',
+      'A production-ready, dual-language e-commerce platform that handles real inventory, regional shipping rules, and Stripe + PayPal payments. Built to prove I can architect and ship a complete full-stack product from database to checkout.',
     tech: ['Next.js 14', 'TypeScript', 'Cloudflare D1', 'Cloudflare R2', 'Stripe', 'PayPal', 'Tailwind CSS'],
     gradient: 'from-purple-500 via-violet-500 to-indigo-500',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgeorgiobandera.se?w=600&h=400',
@@ -21,7 +21,7 @@ export const projects = [
     title: 'ToolHub',
     category: 'Full-Stack',
     description:
-      'A full-stack eCommerce platform for browsing and purchasing high-quality tools, with user accounts, wishlist, product reviews, and Stripe checkout. Built with Django REST Framework and PostgreSQL, with Cloudinary image hosting and deployed on Heroku. Includes full CRUD for products, reviews, cart, and a user dashboard.',
+      'A complete e-commerce solution for selling tools online, featuring user accounts, wishlists, product reviews, and Stripe checkout. Demonstrates full CRUD, relational database design, and secure payment integration.',
     tech: ['Python', 'Django', 'PostgreSQL', 'Cloudinary', 'Stripe', 'Bootstrap 5', 'Heroku'],
     gradient: 'from-cyan-500 via-blue-500 to-indigo-500',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftool-hub-f8ebaa947792.herokuapp.com%2F?w=600&h=400',
@@ -34,7 +34,7 @@ export const projects = [
     title: 'Flavour Vault',
     category: 'Full-Stack',
     description:
-      'A recipe-sharing platform where users can publish, browse, and review recipes. Search by tags, categories, or ingredients, upload dish photos, and manage your own recipe collection. Built with Django REST Framework, PostgreSQL, and Cloudinary, deployed on Heroku with full CRUD for recipes and reviews.',
+      'A community recipe platform with search, tags, photo uploads, and user collections. Shows I can build engaging user-generated content features with authentication, image handling, and a polished UI.',
     tech: ['Python', 'Django', 'PostgreSQL', 'Cloudinary', 'Bootstrap', 'Heroku'],
     gradient: 'from-pink-500 via-rose-500 to-orange-500',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fflavour-vault-6970ed23d7f4.herokuapp.com%2F?w=600&h=400',
@@ -47,7 +47,7 @@ export const projects = [
     title: 'Weather Finder',
     category: 'Web App',
     description:
-      'An interactive weather app providing current conditions, a scrollable hourly forecast, and clothing advice based on temperature and weather. Features a geolocation modal (with London fallback), responsive design, and a toggle between Today\'s Highlights and Hourly Forecast. Built with vanilla JavaScript and the OpenWeatherMap API.',
+      'A clean, responsive weather dashboard that uses geolocation and a third-party API to deliver real-time forecasts and practical clothing advice. Focused on UX, error handling, and mobile-first design.',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'OpenWeatherMap API', 'Geolocation', 'Font Awesome'],
     gradient: 'from-blue-500 via-sky-500 to-teal-500',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Frand-jelo.github.io%2FWeather-Webiste%2F?w=600&h=400',
